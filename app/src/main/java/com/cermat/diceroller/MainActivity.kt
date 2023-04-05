@@ -22,13 +22,23 @@ class MainActivity : AppCompatActivity() {
 
         // Do a dice roll when the app starts
         rollDice()
+
+    }
+
+    fun setIdentity(){
+        val name: TextView = findViewById(R.id.nama)
+        val nim : TextView = findViewById(R.id.nim)
+        val kelas : TextView = findViewById(R.id.kelas)
+
+        name.text = "Aditya Darma Yuda"
+        nim.text = "223307061"
+        kelas.text = "2C"
     }
 
 
     private fun rollDice() {
         val dice = Dice(6)
         val diceRoll = dice.roll()
-
         val diceImage: ImageView = findViewById(R.id.imageView)
 
         val drawableResource = when (diceRoll) {
